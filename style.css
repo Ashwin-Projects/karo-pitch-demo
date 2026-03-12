@@ -157,6 +157,20 @@ nav a.cta-nav:hover{background:var(--rust);transform:translateY(-1px);}
 .cta p{font-size:18px;color:rgba(255,255,255,0.5);margin-bottom:40px;position:relative;z-index:1;}
 .cta-btns{display:flex;gap:14px;justify-content:center;position:relative;z-index:1;}
 
+/* KAROSTARTUP BANNER STRIP */
+.ks-banner{background:var(--ink);padding:80px 60px;border-top:1px solid rgba(255,255,255,0.06);}
+.ks-banner-inner{max-width:1200px;margin:0 auto;display:grid;grid-template-columns:1fr 1fr;gap:80px;align-items:center;}
+.ks-banner-left h3{font-family:'Syne',sans-serif;font-size:clamp(24px,3vw,38px);font-weight:800;color:#fff;letter-spacing:-1px;margin:12px 0 16px;line-height:1.15;}
+.ks-banner-left h3 em{font-style:normal;background:linear-gradient(135deg,var(--saffron),var(--rust));-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text;}
+.ks-banner-left p{font-size:15px;color:rgba(255,255,255,0.55);line-height:1.75;max-width:420px;}
+.ks-banner-stats{display:grid;grid-template-columns:1fr 1fr;gap:2px;border-radius:16px;overflow:hidden;}
+.ks-bstat{background:rgba(255,255,255,0.04);border:1px solid rgba(255,255,255,0.07);padding:28px 24px;transition:background 0.2s;}
+.ks-bstat:hover{background:rgba(244,160,39,0.08);}
+.ks-bstat span{font-family:'Syne',sans-serif;font-size:28px;font-weight:800;color:var(--saffron);display:block;margin-bottom:6px;}
+.ks-bstat p{font-size:13px;color:rgba(255,255,255,0.45);margin:0;line-height:1.4;}
+@media(max-width:900px){.ks-banner{padding:64px 24px;}.ks-banner-inner{grid-template-columns:1fr;gap:48px;}.ks-banner-left p{max-width:100%;}}
+@media(max-width:600px){.ks-banner-stats{grid-template-columns:1fr 1fr;}.ks-bstat span{font-size:22px;}}
+
 /* FOOTER */
 footer{background:#0f0f1a;color:rgba(255,255,255,0.4);padding:48px 60px;display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:20px;}
 .footer-logo{font-family:'Syne',sans-serif;font-size:20px;font-weight:800;color:#fff;text-decoration:none;}
