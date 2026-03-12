@@ -7,7 +7,6 @@
 <link rel="stylesheet" href="style.css">
 </head>
 <body>
-
 <header>
   <a href="index.html" class="logo">Karo<span>Pitch</span></a>
   <nav>
@@ -18,8 +17,6 @@
     <a href="apply.html" class="cta-nav">Apply Now →</a>
   </nav>
 </header>
-
-<!-- HERO -->
 <section class="hero" id="hero">
   <div class="hero-bg-grid"></div>
   <div class="hero-blob blob1"></div>
@@ -39,8 +36,6 @@
     <div class="stat"><span class="stat-num">Across</span><span class="stat-label">Bharat</span></div>
   </div>
 </section>
-
-<!-- ABOUT KARO PITCH -->
 <section class="section" id="about">
   <div class="text-center">
     <span class="section-label">About Karo Pitch</span>
@@ -48,8 +43,6 @@
     <p class="section-sub" style="margin:0 auto;">Karo Pitch is a platform designed to connect early-stage founders from across India with investors. Many founders in Tier-2 and Tier-3 cities build strong businesses but struggle to access funding and visibility. Karo Pitch bridges this gap through curated pitch events and a startup discovery platform.</p>
   </div>
 </section>
-
-<!-- HOW IT WORKS -->
 <div class="steps-wrap">
   <div class="steps-inner">
     <div class="text-center">
@@ -65,8 +58,6 @@
     </div>
   </div>
 </div>
-
-<!-- WHO CAN APPLY -->
 <section class="section">
   <div class="two-col-section">
     <div>
@@ -87,15 +78,12 @@
     </div>
   </div>
 </section>
-
-<!-- FEATURED STARTUPS -->
 <section class="section" id="startups" style="padding-top:0;">
   <div style="display:flex;justify-content:space-between;align-items:flex-end;flex-wrap:wrap;gap:16px;margin-bottom:40px;">
     <div><span class="section-label">Alumni</span><h2 class="section-title" style="margin-bottom:0;">Featured Startups</h2></div>
     <a href="startups.html" class="btn btn-outline" style="font-size:14px;">View All →</a>
   </div>
   <div class="startup-grid">
-
     <div class="startup-card" onclick="openModal('techmed')" style="cursor:pointer;">
       <div class="startup-logo-placeholder">TM</div>
       <div class="startup-tag">HealthTech</div>
@@ -104,7 +92,6 @@
       <div class="startup-footer"><span class="startup-stage">Seed · Jaipur</span><span class="startup-raise">Raising ₹2Cr</span></div>
       <span class="view-details">View Details →</span>
     </div>
-
     <div class="startup-card" onclick="openModal('greenpack')" style="cursor:pointer;">
       <div class="startup-logo-placeholder">GP</div>
       <div class="startup-tag">Sustainable Tech</div>
@@ -113,7 +100,6 @@
       <div class="startup-footer"><span class="startup-stage">Pre-Series A · Ludhiana</span><span class="startup-raise">Raising ₹5Cr</span></div>
       <span class="view-details">View Details →</span>
     </div>
-
     <div class="startup-card" onclick="openModal('finnext')" style="cursor:pointer;">
       <div class="startup-logo-placeholder">FN</div>
       <div class="startup-tag">FinTech</div>
@@ -122,10 +108,7 @@
       <div class="startup-footer"><span class="startup-stage">Pre-Seed · Surat</span><span class="startup-raise">Raising ₹80L</span></div>
       <span class="view-details">View Details →</span>
     </div>
-
   </div>
-
-  <!-- MODAL (shared with featured cards) -->
   <div class="modal-overlay" id="modalOverlay" onclick="closeOnOverlay(event)">
     <div class="modal" id="modalBox">
       <button class="modal-close" onclick="closeModal()">✕</button>
@@ -141,7 +124,6 @@
       <div class="modal-section" style="margin-bottom:0"><div class="modal-section-label">The Solution</div><p id="mSolution"></p></div>
     </div>
   </div>
-
   <script>
   const startups = {
     techmed: { tag:'HealthTech', name:'TechMed Solutions', desc:'AI-powered diagnostic platform bringing specialist-level medical expertise to rural healthcare centers across Bharat.', location:'Jaipur, Rajasthan', stage:'Seed Stage', raise:'₹2 Crore', problem:'Rural clinics across India lack access to advanced diagnostic tools and specialist doctors, leading to delayed or missed diagnoses for millions of patients.', solution:'TechMed deploys AI-powered diagnostic systems at rural health centers that analyse symptoms, vitals, and basic test results — delivering specialist-grade insights to any clinic in real time.' },
@@ -169,8 +151,6 @@
   document.addEventListener('keydown', e => { if (e.key === 'Escape') closeModal(); });
   </script>
 </section>
-
-<!-- INVESTORS -->
 <div class="investors-wrap" id="investors">
   <div class="investors-inner">
     <div class="text-center">
@@ -188,8 +168,6 @@
     </div>
   </div>
 </div>
-
-<!-- CTA -->
 <section class="cta">
   <div class="cta-blob cta-blob1"></div>
   <div class="cta-blob cta-blob2"></div>
@@ -201,8 +179,6 @@
     <a href="investors.html" class="btn btn-secondary">Partner With Us</a>
   </div>
 </section>
-
-<!-- POWERED BY KAROSTARTUP STRIP -->
 <div class="ks-banner">
   <div class="ks-banner-inner">
     <div class="ks-banner-left">
@@ -219,7 +195,6 @@
     </div>
   </div>
 </div>
-
 <footer>
   <a href="index.html" class="footer-logo">Karo<span>Pitch</span></a>
   <p>© 2026 Karo Pitch · Powered by <a href="https://www.karostartup.com" target="_blank" rel="noopener" style="color:var(--saffron);text-decoration:none;font-weight:600;">KaroStartup</a></p>
@@ -230,6 +205,6 @@
     <a href="apply.html">Apply</a>
   </div>
 </footer>
-
+<script src="script.js"></script>
 </body>
 </html>
