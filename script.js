@@ -2,7 +2,6 @@
 
 // Scroll Animation
 const scrollElements = document.querySelectorAll('.scroll-animation');
-
 const checkScroll = () => {
     const triggerBottom = window.innerHeight * 0.8;
     scrollElements.forEach((element) => {
@@ -14,19 +13,15 @@ const checkScroll = () => {
         }
     });
 };
-
 window.addEventListener('scroll', checkScroll);
 
 // Animated Number Counters
 const counters = document.querySelectorAll('.counter');
-
 const animateCounter = (element) => {
     const updateCount = () => {
         const target = +element.getAttribute('data-target');
         const count = +element.innerText;
-
         const increment = target / 200;
-
         if (count < target) {
             element.innerText = Math.ceil(count + increment);
             setTimeout(updateCount, 1);
@@ -36,7 +31,6 @@ const animateCounter = (element) => {
     };
     updateCount();
 };
-
 counters.forEach(counter => {
     const observer = new IntersectionObserver(entries => {
         if (entries[0].isIntersecting) {
@@ -47,25 +41,21 @@ counters.forEach(counter => {
     observer.observe(counter);
 });
 
-// Smooth Page Transitions
-document.querySelectorAll('a').forEach(anchor => {
+// Smooth scroll ONLY for same-page anchor links (href starts with #)
+document.querySelectorAll('a[href^="#"]').forEach(anchor => {
     anchor.addEventListener('click', function (e) {
-        e.preventDefault();
         const targetId = this.getAttribute('href').substring(1);
         const targetSection = document.getElementById(targetId);
-        targetSection.scrollIntoView({
-            behavior: 'smooth'
-        });
+        if (targetSection) {
+            e.preventDefault();
+            targetSection.scrollIntoView({ behavior: 'smooth' });
+        }
     });
 });
 
 // Enhanced Interactivity
 const interactiveElements = document.querySelectorAll('.interactive');
 interactiveElements.forEach(element => {
-    element.addEventListener('mouseover', () => {
-        element.classList.add('hover');
-    });
-    element.addEventListener('mouseout', () => {
-        element.classList.remove('hover');
-    });
+    element.addEventListener('mouseover', () => element.classList.add('hover'));
+    element.addEventListener('mouseout', () => element.classList.remove('hover'));
 });
