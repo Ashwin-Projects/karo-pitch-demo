@@ -38,7 +38,8 @@
   </div>
 
   <div class="startup-grid">
-    <div class="startup-card">
+
+    <div class="startup-card" onclick="openModal('techmed')">
       <div class="startup-tag">HealthTech</div>
       <h4>TechMed Solutions</h4>
       <p>AI-powered diagnostic platform bringing specialist-level medical expertise to rural healthcare centers across Bharat.</p>
@@ -46,9 +47,10 @@
         <span class="startup-stage">Seed Stage · Jaipur</span>
         <span class="startup-raise">Raising ₹2Cr</span>
       </div>
+      <span class="view-details">View Details →</span>
     </div>
 
-    <div class="startup-card">
+    <div class="startup-card" onclick="openModal('greenpack')">
       <div class="startup-tag">Sustainable Tech</div>
       <h4>GreenPack Industries</h4>
       <p>Eco-friendly packaging from agricultural waste — helping brands cut their carbon footprint at scale.</p>
@@ -56,9 +58,10 @@
         <span class="startup-stage">Pre-Series A · Ludhiana</span>
         <span class="startup-raise">Raising ₹5Cr</span>
       </div>
+      <span class="view-details">View Details →</span>
     </div>
 
-    <div class="startup-card">
+    <div class="startup-card" onclick="openModal('edubridge')">
       <div class="startup-tag">EdTech</div>
       <h4>EduBridge Learning</h4>
       <p>Vernacular learning platform connecting Tier-2 and Tier-3 students with quality educators and job-ready skills.</p>
@@ -66,9 +69,10 @@
         <span class="startup-stage">Seed Stage · Bhopal</span>
         <span class="startup-raise">Raising ₹1.5Cr</span>
       </div>
+      <span class="view-details">View Details →</span>
     </div>
 
-    <div class="startup-card">
+    <div class="startup-card" onclick="openModal('finnext')">
       <div class="startup-tag">FinTech</div>
       <h4>FinNext</h4>
       <p>Digital banking solution for small businesses, simplifying financial management for MSMEs across Bharat.</p>
@@ -76,9 +80,10 @@
         <span class="startup-stage">Pre-Seed · Surat</span>
         <span class="startup-raise">Raising ₹80L</span>
       </div>
+      <span class="view-details">View Details →</span>
     </div>
 
-    <div class="startup-card">
+    <div class="startup-card" onclick="openModal('agrismart')">
       <div class="startup-tag">AgriTech</div>
       <h4>AgriSmart</h4>
       <p>IoT-based precision farming solutions helping farmers increase yield and reduce input costs through smart agriculture.</p>
@@ -86,9 +91,10 @@
         <span class="startup-stage">Seed Stage · Nagpur</span>
         <span class="startup-raise">Raising ₹3Cr</span>
       </div>
+      <span class="view-details">View Details →</span>
     </div>
 
-    <div class="startup-card">
+    <div class="startup-card" onclick="openModal('logiswift')">
       <div class="startup-tag">Logistics</div>
       <h4>LogiSwift</h4>
       <p>Last-mile delivery optimization platform connecting local businesses with efficient, tech-driven logistics networks.</p>
@@ -96,9 +102,10 @@
         <span class="startup-stage">Pre-Series A · Indore</span>
         <span class="startup-raise">Raising ₹4Cr</span>
       </div>
+      <span class="view-details">View Details →</span>
     </div>
 
-    <div class="startup-card">
+    <div class="startup-card" onclick="openModal('ecobottle')">
       <div class="startup-tag">D2C</div>
       <h4>EcoBottle</h4>
       <p>Sustainable D2C water bottle brand using plant-based materials — building India's first truly circular consumer brand.</p>
@@ -106,9 +113,10 @@
         <span class="startup-stage">Pre-Seed · Pune</span>
         <span class="startup-raise">Raising ₹60L</span>
       </div>
+      <span class="view-details">View Details →</span>
     </div>
 
-    <div class="startup-card">
+    <div class="startup-card" onclick="openModal('farmconnect')">
       <div class="startup-tag">AgriTech</div>
       <h4>FarmConnect</h4>
       <p>Connecting farmers directly with buyers through a transparent marketplace — cutting middlemen and boosting farmer income.</p>
@@ -116,9 +124,10 @@
         <span class="startup-stage">Seed Stage · Nashik</span>
         <span class="startup-raise">Raising ₹2.5Cr</span>
       </div>
+      <span class="view-details">View Details →</span>
     </div>
 
-    <div class="startup-card">
+    <div class="startup-card" onclick="openModal('eduai')">
       <div class="startup-tag">EdTech</div>
       <h4>EduAI</h4>
       <p>AI-driven adaptive learning platform personalizing education for students in regional languages across rural India.</p>
@@ -126,9 +135,28 @@
         <span class="startup-stage">Pre-Seed · Coimbatore</span>
         <span class="startup-raise">Raising ₹1Cr</span>
       </div>
+      <span class="view-details">View Details →</span>
     </div>
+
   </div>
 </section>
+
+<!-- MODAL -->
+<div class="modal-overlay" id="modalOverlay" onclick="closeOnOverlay(event)">
+  <div class="modal" id="modalBox">
+    <button class="modal-close" onclick="closeModal()">✕</button>
+    <div class="modal-tag" id="mTag"></div>
+    <h2 id="mName"></h2>
+    <p class="modal-desc" id="mDesc"></p>
+    <div class="modal-meta">
+      <div class="modal-meta-item"><span class="modal-meta-label">📍 Location</span><span class="modal-meta-value" id="mLocation"></span></div>
+      <div class="modal-meta-item"><span class="modal-meta-label">📊 Stage</span><span class="modal-meta-value" id="mStage"></span></div>
+      <div class="modal-meta-item"><span class="modal-meta-label">💰 Raising</span><span class="modal-meta-value" id="mRaise"></span></div>
+    </div>
+    <div class="modal-section"><div class="modal-section-label">The Problem</div><p id="mProblem"></p></div>
+    <div class="modal-section" style="margin-bottom:0"><div class="modal-section-label">The Solution</div><p id="mSolution"></p></div>
+  </div>
+</div>
 
 <section class="cta">
   <div class="cta-blob cta-blob1"></div>
@@ -153,12 +181,130 @@
 </footer>
 
 <script>
-  document.querySelectorAll('.filter-btn').forEach(btn => {
-    btn.addEventListener('click', function() {
-      document.querySelectorAll('.filter-btn').forEach(b => b.classList.remove('active'));
-      this.classList.add('active');
-    });
+const startups = {
+  techmed: {
+    tag: 'HealthTech',
+    name: 'TechMed Solutions',
+    desc: 'AI-powered diagnostic platform bringing specialist-level medical expertise to rural healthcare centers across Bharat.',
+    location: 'Jaipur, Rajasthan',
+    stage: 'Seed Stage',
+    raise: '₹2 Crore',
+    problem: 'Rural clinics across India lack access to advanced diagnostic tools and specialist doctors, leading to delayed or missed diagnoses for millions of patients.',
+    solution: 'TechMed deploys AI-powered diagnostic systems at rural health centers that analyse symptoms, vitals, and basic test results — delivering specialist-grade insights to any clinic in real time.'
+  },
+  greenpack: {
+    tag: 'Sustainable Tech',
+    name: 'GreenPack Industries',
+    desc: 'Eco-friendly packaging from agricultural waste — helping brands cut their carbon footprint at scale.',
+    location: 'Ludhiana, Punjab',
+    stage: 'Pre-Series A',
+    raise: '₹5 Crore',
+    problem: 'India generates over 3.4 million tonnes of plastic packaging waste annually. Brands want sustainable alternatives but struggle to find cost-effective options at scale.',
+    solution: 'GreenPack converts agricultural crop waste into biodegradable packaging material — cost-competitive with plastic and fully compostable within 90 days.'
+  },
+  edubridge: {
+    tag: 'EdTech',
+    name: 'EduBridge Learning',
+    desc: 'Vernacular learning platform connecting Tier-2 and Tier-3 students with quality educators and job-ready skills.',
+    location: 'Bhopal, MP',
+    stage: 'Seed Stage',
+    raise: '₹1.5 Crore',
+    problem: 'Students in smaller cities have limited access to quality coaching and skill-building programs that are mostly concentrated in metros and taught in English.',
+    solution: 'EduBridge delivers live and recorded skill courses in Hindi and regional languages, taught by vetted educators — accessible on low-end smartphones with low data usage.'
+  },
+  finnext: {
+    tag: 'FinTech',
+    name: 'FinNext',
+    desc: 'Digital banking solution for small businesses, simplifying financial management for MSMEs across Bharat.',
+    location: 'Surat, Gujarat',
+    stage: 'Pre-Seed',
+    raise: '₹80 Lakh',
+    problem: 'Over 63 million MSMEs in India operate without proper banking tools — managing cash flow through notebooks, WhatsApp, and informal credit systems.',
+    solution: 'FinNext offers a simple mobile-first business account with automated bookkeeping, GST filing, and instant credit access — built specifically for the non-English-speaking MSME owner.'
+  },
+  agrismart: {
+    tag: 'AgriTech',
+    name: 'AgriSmart',
+    desc: 'IoT-based precision farming solutions helping farmers increase yield and reduce input costs through smart agriculture.',
+    location: 'Nagpur, Maharashtra',
+    stage: 'Seed Stage',
+    raise: '₹3 Crore',
+    problem: 'Indian farmers spend an estimated 30–40% more on water, fertiliser, and pesticides than necessary due to lack of real-time field data and crop monitoring.',
+    solution: 'AgriSmart installs affordable IoT sensors across farmland that monitor soil moisture, temperature, and crop health — sending actionable alerts and automated irrigation controls via a simple app.'
+  },
+  logiswift: {
+    tag: 'Logistics',
+    name: 'LogiSwift',
+    desc: 'Last-mile delivery optimization platform connecting local businesses with efficient, tech-driven logistics networks.',
+    location: 'Indore, MP',
+    stage: 'Pre-Series A',
+    raise: '₹4 Crore',
+    problem: 'Small businesses in Tier-2 and Tier-3 cities pay 2–3x more for last-mile delivery compared to metro businesses, making them uncompetitive in the D2C economy.',
+    solution: 'LogiSwift aggregates local delivery partners and optimises routes using ML-based dispatch — giving small businesses metro-grade logistics at 40% lower cost.'
+  },
+  ecobottle: {
+    tag: 'D2C',
+    name: 'EcoBottle',
+    desc: 'Sustainable D2C water bottle brand using plant-based materials — building India\'s first truly circular consumer brand.',
+    location: 'Pune, Maharashtra',
+    stage: 'Pre-Seed',
+    raise: '₹60 Lakh',
+    problem: 'Single-use plastic water bottles are among India\'s top contributors to landfill waste, yet most \'eco\' alternatives are expensive imports with a large carbon footprint.',
+    solution: 'EcoBottle manufactures durable, plant-based reusable bottles in India — with a take-back and refurbishment programme that creates a closed-loop circular model.'
+  },
+  farmconnect: {
+    tag: 'AgriTech',
+    name: 'FarmConnect',
+    desc: 'Connecting farmers directly with buyers through a transparent marketplace — cutting middlemen and boosting farmer income.',
+    location: 'Nashik, Maharashtra',
+    stage: 'Seed Stage',
+    raise: '₹2.5 Crore',
+    problem: 'Farmers typically receive only 20–30% of the final consumer price for their produce due to a long, opaque chain of middlemen and commission agents.',
+    solution: 'FarmConnect is a direct marketplace where verified farmers list produce and bulk buyers — restaurants, retailers, exporters — can purchase at transparent, fair prices with same-day logistics.'
+  },
+  eduai: {
+    tag: 'EdTech',
+    name: 'EduAI',
+    desc: 'AI-driven adaptive learning platform personalizing education for students in regional languages across rural India.',
+    location: 'Coimbatore, Tamil Nadu',
+    stage: 'Pre-Seed',
+    raise: '₹1 Crore',
+    problem: 'Standardised online learning platforms fail rural students because they teach in English, move at a fixed pace, and can\'t adapt to individual learning gaps.',
+    solution: 'EduAI uses adaptive AI to personalise each student\'s learning path in their regional language — identifying weak areas and adjusting content difficulty in real time.'
+  }
+};
+
+function openModal(id) {
+  const s = startups[id];
+  document.getElementById('mTag').textContent = s.tag;
+  document.getElementById('mName').textContent = s.name;
+  document.getElementById('mDesc').textContent = s.desc;
+  document.getElementById('mLocation').textContent = s.location;
+  document.getElementById('mStage').textContent = s.stage;
+  document.getElementById('mRaise').textContent = s.raise;
+  document.getElementById('mProblem').textContent = s.problem;
+  document.getElementById('mSolution').textContent = s.solution;
+  document.getElementById('modalOverlay').classList.add('open');
+  document.body.style.overflow = 'hidden';
+}
+
+function closeModal() {
+  document.getElementById('modalOverlay').classList.remove('open');
+  document.body.style.overflow = '';
+}
+
+function closeOnOverlay(e) {
+  if (e.target === document.getElementById('modalOverlay')) closeModal();
+}
+
+document.addEventListener('keydown', e => { if (e.key === 'Escape') closeModal(); });
+
+document.querySelectorAll('.filter-btn').forEach(btn => {
+  btn.addEventListener('click', function() {
+    document.querySelectorAll('.filter-btn').forEach(b => b.classList.remove('active'));
+    this.classList.add('active');
   });
+});
 </script>
 
 </body>
