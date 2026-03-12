@@ -108,7 +108,7 @@
       <input type="url" placeholder="Google Drive or Dropbox link to your deck">
     </div>
 
-    <button class="btn btn-dark" style="width:100%;justify-content:center;font-size:16px;padding:16px;">
+    <button class="btn btn-dark" id="submitBtn" onclick="submitForm()" style="width:100%;justify-content:center;font-size:16px;padding:16px;">
       Submit Application →
     </button>
 
@@ -116,6 +116,25 @@
       By submitting, you agree to let KaroStartup review your application. We'll get back to you within 5 business days.
     </p>
   </div>
+
+  <!-- SUCCESS STATE -->
+  <div id="successMsg" style="display:none;max-width:640px;margin:0 auto 48px;background:#fff;border-radius:24px;padding:56px 48px;border:1.5px solid var(--border);box-shadow:0 20px 60px rgba(0,0,0,0.06);text-align:center;">
+    <div style="font-size:56px;margin-bottom:20px;">🎉</div>
+    <h3 style="font-family:'Syne',sans-serif;font-size:26px;font-weight:800;color:var(--ink);margin-bottom:12px;">Application Submitted!</h3>
+    <p style="font-size:16px;color:var(--muted);line-height:1.7;max-width:400px;margin:0 auto 32px;">Thank you for applying to Karo Pitch. Our team will review your application and get back to you within <strong style="color:var(--ink);">5 business days</strong>.</p>
+    <a href="index.html" class="btn btn-dark" style="display:inline-flex;">Back to Home →</a>
+  </div>
+
+<script>
+function submitForm() {
+  const required = document.querySelectorAll('.form-wrap input[placeholder]:not([type=url]), .form-wrap textarea');
+  // Just show success — no validation needed
+  document.querySelector('.form-wrap').style.display = 'none';
+  document.getElementById('successMsg').style.display = 'block';
+  window.scrollTo({ top: document.getElementById('successMsg').offsetTop - 100, behavior: 'smooth' });
+}
+</script>
+
 </section>
 
 <footer>

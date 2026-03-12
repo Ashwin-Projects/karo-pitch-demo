@@ -28,13 +28,18 @@
 <section class="section">
   <div class="filter-bar">
     <button class="filter-btn active">All</button>
-    <button class="filter-btn">D2C</button>
-    <button class="filter-btn">HealthTech</button>
-    <button class="filter-btn">EdTech</button>
-    <button class="filter-btn">FinTech</button>
-    <button class="filter-btn">AgriTech</button>
-    <button class="filter-btn">Logistics</button>
-    <button class="filter-btn">Sustainable</button>
+    <button class="filter-btn">🛍️ D2C</button>
+    <button class="filter-btn">👥 Consumer Startups</button>
+    <button class="filter-btn">🏭 MSMEs</button>
+    <button class="filter-btn">💻 SaaS</button>
+    <button class="filter-btn">⚙️ Manufacturing</button>
+    <button class="filter-btn">🇮🇳 Bharat-focused</button>
+    <button class="filter-btn">🏥 HealthTech</button>
+    <button class="filter-btn">📚 EdTech</button>
+    <button class="filter-btn">💳 FinTech</button>
+    <button class="filter-btn">🌾 AgriTech</button>
+    <button class="filter-btn">🚚 Logistics</button>
+    <button class="filter-btn">♻️ Sustainable</button>
   </div>
 
   <div class="startup-grid">
@@ -305,6 +310,22 @@ document.querySelectorAll('.filter-btn').forEach(btn => {
     this.classList.add('active');
   });
 });
+
+// Auto-activate filter from URL param e.g. startups.html?filter=AgriTech
+(function() {
+  const param = new URLSearchParams(window.location.search).get('filter');
+  if (!param) return;
+  const btns = document.querySelectorAll('.filter-btn');
+  btns.forEach(btn => {
+    // strip emoji and spaces for comparison
+    const label = btn.textContent.replace(/[\u{1F000}-\u{1FFFF}\u{2600}-\u{27FF}\uFE0F]/gu, '').trim().toLowerCase();
+    if (label.includes(param.toLowerCase())) {
+      btns.forEach(b => b.classList.remove('active'));
+      btn.classList.add('active');
+      setTimeout(() => btn.scrollIntoView({ behavior: 'smooth', block: 'center' }), 100);
+    }
+  });
+})();
 </script>
 
 </body>
